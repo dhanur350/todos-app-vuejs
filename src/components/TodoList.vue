@@ -48,14 +48,14 @@ const deleteTodo = (id: number) => {
     </div>
 
     <ul class="todo-list">
-      <li v-for="todo in todos" :key="todo.id" :class="{ completed: todo.completed }">
+      <li v-for="item in todos" :key="item.id" :class="{ completed: item.completed }">
         <input
           type="checkbox"
-          :checked="todo.completed"
-          @change="toggleTodo(todo.id)"
+          :checked="item.completed"
+          @change="toggleTodo(item.id)"
         />
-        <span>{{ todo.text }}</span>
-        <button @click="deleteTodo(todo.id)" class="delete-btn">×</button>
+        <span>{{ item.text }}</span>
+        <button @click="deleteTodo(item.id)" class="delete-btn">×</button>
       </li>
     </ul>
   </div>
